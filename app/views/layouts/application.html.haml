@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Todo List
+    :css
+      .glyphicon-thumbs-up { cursor:pointer }
+    = csrf_meta_tags
+    = javascript_include_tag 'application'
+    = stylesheet_link_tag    'application', media: 'all'
+  %body{"ng-app": "todoList"}
+    .row
+      .col-md-6.col-md-offset-2
+        %ui-view
