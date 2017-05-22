@@ -1,14 +1,19 @@
-angular.module('todoList', ['ui.router', 'templates', 'Devise'])
+angular.module('todoList', ['ui.router', 'templates', 'Devise', 'ngFlash'])
 .config([
 '$stateProvider',
 '$urlRouterProvider',
 function($stateProvider, $urlRouterProvider) {
-
   $stateProvider
     .state('home', {
-      url: '/home',
-      templateUrl: 'auth/login.html',
-      controller: 'MainCtrl',
+      url: '/',
+      templateUrl: 'home/home.html',
+      controller: 'ProjectCtrl',
+      onEnter: ['$state', 'Auth', function($state, Auth) {
+        Auth.currentUser().then(function (){},
+          function (){
+           $state.go('login');
+         })
+      }]
     })
     .state('login', {
       url: '/login',
@@ -31,5 +36,5 @@ function($stateProvider, $urlRouterProvider) {
       }]
     });
 
-  $urlRouterProvider.otherwise('home');
+  $urlRouterProvider.otherwise('/');
 }]);

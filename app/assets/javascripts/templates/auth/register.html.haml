@@ -2,6 +2,7 @@
   .form-head
     Sign up
   .form-body
+    %flash-message
     .form-group
       %label.control-label{for: "email"}
         Enter your email
@@ -10,6 +11,6 @@
       %label.control-label{for: "password"}
         Password
       %input.form-control{"ng-model": "user.password", placeholder: "Password", type: "password"}
-    %input.btn.btn-default{type: "submit", value: "Sign up"}
+    %input.btn.btn-primary{type: "submit", value: "Sign up"}
     Have an Account?
     %a{"ui-sref": "login"} Log In

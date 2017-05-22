@@ -11,6 +11,7 @@ gem 'angular-rails-templates'
 gem 'responders'
 gem 'devise'
 gem 'haml'
+gem 'cancancan'
 
 
 group :development, :test do

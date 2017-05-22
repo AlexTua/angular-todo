@@ -50,6 +50,7 @@ GEM
     bcrypt (3.1.11)
     bindex (0.5.0)
     builder (3.2.3)
+    cancancan (1.16.0)
     capybara (2.14.0)
       addressable
       mime-types (>= 1.16)
@@ -213,6 +214,7 @@ PLATFORMS
 DEPENDENCIES
   angular-rails-templates
   angular_rails_csrf
+  cancancan
   capybara
   database_cleaner
   devise
