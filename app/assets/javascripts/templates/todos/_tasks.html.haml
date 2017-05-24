@@ -4,8 +4,9 @@
       .col-md-1.text-center.task-status
         %input{type: "checkbox", "ng-model": "task.done", "ng-click": "updateStatus(this)"}
       %div{"ng-hide": "editSwitch"}
-        .col-md-9.task-text{"ng-class": "task.done ? 'done' : ''"}
-          {{task.title}}
+        .col-md-9.task-text
+          %span{"ng-class": "task.done ? 'done' : ''"}
+            {{task.title}}
           %span{"ng-include": "'todos/_datepicker.html'"}
         .col-md-2.text-center.task-control
           %span.glyphicon.glyphicon-triangle-top{"ng-click": "reorderTask(this, 'up')"}
