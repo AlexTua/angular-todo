@@ -1,11 +1,14 @@
 $icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
 @import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
 @import "bootstrap-sass/assets/stylesheets/bootstrap";
+@import "angularjs-datepicker/dist/angular-datepicker";
 @import "auth";
 @import "home";
 @import "todo";
+@import "tasks";
 
 body {
+  min-width: 1326px; 
   height: 100%;
   background: #d6d6d6;
   background: -moz-linear-gradient(top, #d6d6d6 0%, #d6d6d6 27%, #d1c75c 63%, #c78324 87%, #c78324 100%);
@@ -16,3 +19,8 @@ body {
   background: linear-gradient(to bottom, #d6d6d6 0%, #d6d6d6 27%, #d1c75c 63%, #c78324 87%, #c78324 100%);
   background-attachment: fixed;
 }
+
+.container {
+  width: 100%;
+}
+

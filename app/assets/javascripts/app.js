@@ -1,4 +1,4 @@
-angular.module('todoList', ['ui.router', 'templates', 'Devise', 'ngFlash'])
+angular.module('todoList', ['ui.router', 'templates', 'Devise', 'ngFlash', '720kb.datepicker'])
 .config([
 '$stateProvider',
 '$urlRouterProvider',

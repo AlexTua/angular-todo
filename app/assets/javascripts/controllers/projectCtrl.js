@@ -18,27 +18,21 @@ function($scope, Auth, projects) {
     });
   };
 
-  $scope.updateProject = function(scope, id) {
-    projects.update(id, scope.title).then(function() {
+  $scope.updateProject = function(scope) {
+    projects.update(scope.project.id, scope.title).then(function() {
       scope.project.title = scope.title;
     });
     scope.editSwitch = false;
   };
 
-  $scope.deleteProject = function(id) {
-    projects.delete(id).then(function() {
-      getProjects();
+  $scope.deleteProject = function(project) {
+    projects.delete(project.id).then(function() {
+      $scope.projects.splice($scope.projects.indexOf(project), 1)
     });
   };
 
-  $scope.edit = function(scope, title) {
-    scope.title = title;
+  $scope.edit = function(scope) {
+    scope.title = scope.project.title;
     scope.editSwitch = true;
-  };
-
-  getProjects = function() {
-    projects.getAll().then(function(data) {
-      $scope.projects = data;
-    });
   };
 }]);

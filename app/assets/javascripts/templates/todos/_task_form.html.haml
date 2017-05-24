@@ -1,0 +1,9 @@
+%div{"ng-controller": "taskCtrl"} 
+  .task-head 
+    .col-md-1.text-center
+      %span.glyphicon.glyphicon-plus
+    .input-group
+      %input.form-control{"ng-model": "taskTitle", type: "text", placeholder: "Start typing here to create a task..."}
+      %span.input-group-btn
+        %button.btn.btn-task{"ng-click": "createTask(this)"}
+          Add Task

@@ -1,5 +1,6 @@
 //= require angular
 //= require jquery
+//= require angularjs-datepicker
 //= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 //= require angular-flash-alert
 //= require AngularDevise/lib/devise

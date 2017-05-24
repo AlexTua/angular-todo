@@ -1,23 +1,15 @@
 %button.btn.btn-danger.btn-xs.sign-out{"ng-click": "logout()"}
   %span.glyphicon.glyphicon-log-out
   Log Out
-%div{"ng-repeat": "project in projects | orderBy: 'created_at'"}
-  .todo
-    .todo-head.container
-      %div.col-md-1.todo-title.text-center
-        %span.glyphicon.glyphicon-calendar
-      %div{"ng-hide": "editSwitch"}
-        %div.col-md-10.todo-title
-          {{project.title}}
-        %div.col-md-1.todo-control.text-center
-          %span.glyphicon.glyphicon-pencil{"ng-click": "edit(this, project.title)"}
-          |
-          %span.glyphicon.glyphicon-trash{"ng-click": "deleteProject(project.id)"}
-      %div{"ng-show": "editSwitch"}
-        %div.col-md-10.todo-title
-          %input.form-control.edit-input{"ng-model": "title", type: "text"}
-        %div.col-md-1.todo-control.text-center
-          %span.glyphicon.glyphicon-ok{"ng-click": "updateProject(this, project.id)"}
+
+.todo{"ng-repeat": "project in projects | orderBy: 'created_at'"}
+  .todo-head.container
+    .col-md-1.todo-title.text-center
+      %span.glyphicon.glyphicon-list-alt
+    %div{"ng-include": "'todos/_project_title.html'"}
+  %div{"ng-controller": "taskCtrl"} 
+    %span{"ng-include": "'todos/_task_form.html'"}
+    %span{"ng-include": "'todos/_tasks.html'"}
 %button.btn.btn-primary.add-list.center-block{"ng-click": "createProject()"}
   %span.glyphicon.glyphicon-plus
   Add TODO List
