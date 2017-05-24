@@ -7,12 +7,5 @@
   "engine": {
     "node": "4.7.1",
     "npm": "4.6.1"
-  },
-  "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AlexTua/angular-todo.git"
   }
 }
