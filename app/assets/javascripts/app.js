@@ -17,7 +17,7 @@ function($stateProvider, $urlRouterProvider) {
     })
     .state('login', {
       url: '/login',
-      templateUrl: 'auth/login.html',
+      templateUrl: 'login.html',
       controller: 'AuthCtrl',
       onEnter: ['$state', 'Auth', function($state, Auth) {
         Auth.currentUser().then(function (){
@@ -27,7 +27,7 @@ function($stateProvider, $urlRouterProvider) {
     })
     .state('register', {
       url: '/signup',
-      templateUrl: 'auth/register.html',
+      templateUrl: 'register.html',
       controller: 'AuthCtrl',
       onEnter: ['$state', 'Auth', function($state, Auth) {
         Auth.currentUser().then(function (){
