@@ -8,8 +8,8 @@
           {{task.title}}
           %span{"ng-include": "'todos/_datepicker.html'"}
         .col-md-2.text-center.task-control
-          %span.glyphicon.glyphicon-triangle-top
-          %span.glyphicon.glyphicon-triangle-bottom
+          %span.glyphicon.glyphicon-triangle-top{"ng-click": "reorderTask(this, 'up')"}
+          %span.glyphicon.glyphicon-triangle-bottom{"ng-click": "reorderTask(this, 'down')"}
           %span.glyphicon.glyphicon-pencil{"ng-click": "edit(this)"}
           %span.glyphicon.glyphicon-trash{"ng-click": "deleteTask(this)"}
       %div{"ng-show": "editSwitch"}

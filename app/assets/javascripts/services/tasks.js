@@ -16,6 +16,10 @@ function($http) {
 
     delete: function(id) {
       return $http.delete('/tasks/' + id + '.json');
+    },
+
+    reorder: function(id, direction) {
+      return $http.put('/tasks/' + id + '/reorder.json', {direction: direction});
     }
   };
 }]);

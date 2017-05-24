@@ -6,7 +6,7 @@ function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: 'home/home.html',
+      templateUrl: 'assets/templates/home/home.html',
       controller: 'ProjectCtrl',
       onEnter: ['$state', 'Auth', function($state, Auth) {
         Auth.currentUser().then(function (){},
@@ -17,7 +17,7 @@ function($stateProvider, $urlRouterProvider) {
     })
     .state('login', {
       url: '/login',
-      templateUrl: 'auth/login.html',
+      templateUrl: 'assets/templates/auth/login.html',
       controller: 'AuthCtrl',
       onEnter: ['$state', 'Auth', function($state, Auth) {
         Auth.currentUser().then(function (){
@@ -27,7 +27,7 @@ function($stateProvider, $urlRouterProvider) {
     })
     .state('register', {
       url: '/signup',
-      templateUrl: 'auth/register.html',
+      templateUrl: 'assets/templates/auth/register.html',
       controller: 'AuthCtrl',
       onEnter: ['$state', 'Auth', function($state, Auth) {
         Auth.currentUser().then(function (){

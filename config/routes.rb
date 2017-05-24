@@ -3,5 +3,9 @@ Rails.application.routes.draw do
   root to: 'application#angular'
 
   resources :projects, only: [:index, :create, :update, :destroy]
-  resources :tasks, only: [:create, :update, :destroy]
+  resources :tasks, only: [:create, :update, :destroy] do
+    member do
+      put '/reorder' => 'tasks#reorder'
+    end
+  end
 end
