@@ -129,14 +129,15 @@ datepicker {
   cursor: pointer;
   background: #337AB7;
   border-color: #2e6da4;
-  border-radius: 3px;
+  border-radius: 4px;
   color: #fff;
   max-width: 60px;
   width: auto;
   height: 15px;
   font-size: 12px;
   font-weight:bold;
-  padding: 2px;
+  padding: 3px;
+  margin-left: 10px;
   &:hover {
     background-color: #286090;
   }

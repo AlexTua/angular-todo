@@ -1,4 +1,5 @@
-angular.module('todoList', ['ui.router', 'templates', 'Devise', 'ngFlash', '720kb.datepicker'])
+angular.module('todoList', ['ui.router', 'templates', 'Devise', 'ngFlash', 
+'angular-loading-bar', '720kb.datepicker'])
 .config([
 '$stateProvider',
 '$urlRouterProvider',
@@ -17,7 +18,7 @@ function($stateProvider, $urlRouterProvider) {
     })
     .state('login', {
       url: '/login',
-      templateUrl: 'login.html',
+      templateUrl: 'auth/login.html',
       controller: 'AuthCtrl',
       onEnter: ['$state', 'Auth', function($state, Auth) {
         Auth.currentUser().then(function (){
@@ -26,7 +27,7 @@ function($stateProvider, $urlRouterProvider) {
       }]
     })
     .state('register', {
-      url: '/signup',
+      url: 'auth/signup',
       templateUrl: 'register.html',
       controller: 'AuthCtrl',
       onEnter: ['$state', 'Auth', function($state, Auth) {

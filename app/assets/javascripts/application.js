@@ -7,4 +7,5 @@
 //= require_tree ./templates
 //= require angular-ui-router
 //= require angularjs-datepicker
+//= require angular-loading-bar
 //= require_tree .
