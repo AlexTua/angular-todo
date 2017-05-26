@@ -5,7 +5,6 @@ angular.module('todoList')
 'tasks',
 function($scope, Auth, tasks) { 
   $scope.createTask = function(scope) {
-    if(!$scope.taskTitle || $scope.taskTitle === "") { return; }
     tasks.create($scope.taskTitle, scope.project.id).then(function(response) {
       scope.project.tasks.push(response);
       scope.taskTitle = "";
@@ -59,11 +58,5 @@ function($scope, Auth, tasks) {
   $scope.pickDate = function(scope) {
     scope.date= scope.task.deadline;
     scope.dateSwitch = !scope.dateSwitch;
-  };
-
-  compare = function() {
-    projects.getAll().then(function(data) {
-      $scope.projects = data;
-    });
   };
 }]);

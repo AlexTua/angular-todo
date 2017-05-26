@@ -21,6 +21,14 @@ body {
   background-attachment: fixed;
 }
 
+.bottom-left {
+  margin-right: 20px;
+  right: 0;
+  bottom: 0;
+  position: fixed; 
+  max-width: 250px;
+}
+
 .container {
   width: 100%;
 }

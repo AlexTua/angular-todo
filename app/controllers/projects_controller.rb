@@ -6,11 +6,20 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    respond_with current_user.projects.create
+    @project = current_user.projects.new
+    if @project.save
+      respond_with @project
+    else
+      render(status: 422, json: @project.errors.full_messages)
+    end
   end
 
   def update
-    respond_with @project.update(title: params[:title])
+    if @project.update(title: params[:title])
+      respond_with @project
+    else
+      render(status: 422, json: @project.errors.full_messages)
+    end
   end
 
   def destroy

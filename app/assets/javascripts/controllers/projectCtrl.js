@@ -14,7 +14,7 @@ function($scope, Auth, projects) {
   
   $scope.createProject = function() {
     projects.create().then(function(response) {
-      $scope.projects.push(response.data);
+      $scope.projects.push(response);
     });
   };
 

@@ -16,7 +16,7 @@ function($scope, $state, $location, Auth, Flash){
     Auth.login($scope.user).then(function(){
       $location.path('/');
     }, function(response){
-      Flash.create('danger', response.data.error, 3000, {}, true);
+      Flash.create('danger', response.data.error, 3000, {class: 'auth'}, true);
     });
   };
 
@@ -24,7 +24,7 @@ function($scope, $state, $location, Auth, Flash){
     Auth.register($scope.user).then(function(){
       $location.path('/');
     }, function(){
-      Flash.create('danger', "Wrong input", 3000, {}, true);
+      Flash.create('danger', "Wrong input", 3000, {class: 'auth'}, true);
     });
   };
 }]);

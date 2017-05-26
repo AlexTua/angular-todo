@@ -2,11 +2,19 @@ class TasksController < ApplicationController
   load_and_authorize_resource
 
   def create
-    respond_with Task.create(task_params)
+    if @task.save
+      respond_with @task
+    else
+      render(status: 422, json: @task.errors.full_messages)
+    end
   end
 
   def update
-    respond_with @task.update(task_params)
+    if @task.update(task_params)
+      respond_with @task
+    else
+      render(status: 422, json: @task.errors.full_messages)
+    end
   end
 
   def destroy
