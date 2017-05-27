@@ -1,0 +1,5 @@
+%span.glyphicon.glyphicon-comment{"ng-click": "commentsSwitch = !commentsSwitch"}
+%span{"ng-show": "commentsSwitch"}
+  %form.form-inline
+    %input.form-control.comment-edit{type: "text", "placeholder": "Type here to add comment..."}
+    %span.glyphicon.glyphicon-ok

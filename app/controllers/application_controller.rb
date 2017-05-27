@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
 
   respond_to :json
 
+  rescue_from CanCan::AccessDenied do
+    head :unauthorized
+  end
+
   def angular
     render 'layouts/application'
   end

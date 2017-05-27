@@ -1,2 +1,2 @@
-//= link_directory ../javascripts .js .html
+//= link_directory ../javascripts .js 
 //= link_directory ../stylesheets .css

@@ -8,6 +8,7 @@
           %span{"ng-class": "task.done ? 'done' : ''"}
             {{task.title}}
           %span{"ng-include": "'todos/_datepicker.html'"}
+          %span{"ng-include": "'todos/_comments.html'"}
         .col-md-2.text-center.task-control
           %span.glyphicon.glyphicon-triangle-top{"ng-click": "reorderTask(this, 'up')"}
           %span.glyphicon.glyphicon-triangle-bottom{"ng-click": "reorderTask(this, 'down')"}

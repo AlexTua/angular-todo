@@ -11,7 +11,7 @@ function($http, $q, Flash) {
         return response.data;
       }, function(response) {
         Flash.create('danger', response.data, 3000, {}, true);
-        return $q.reject(response);
+        return $q.reject(response.data);
       });
     },  
 

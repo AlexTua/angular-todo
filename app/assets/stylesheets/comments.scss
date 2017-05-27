@@ -1,0 +1,27 @@
+.comment-edit {
+  font-size: 12px;
+  width: 90% !important;
+  padding: 0px;
+  background-color: inherit;
+  height: 28px;
+  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid #000000;
+  border-radius: 0px;
+  &:focus {
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid #000000; 
+  }
+}
+
+.form-inline {
+  .glyphicon-ok {
+    padding-left: 10px; 
+    color: rgba(0, 0, 0, .4);
+    cursor: pointer;
+    &:hover {
+      color: black;
+    }
+  }
+}
