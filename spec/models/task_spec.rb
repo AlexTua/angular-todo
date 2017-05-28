@@ -9,4 +9,11 @@ RSpec.describe Task, type: :model do
   describe "Validations" do
     it { should validate_presence_of(:title) }
   end
+
+  describe "#as_json" do
+    it 'include comments to json' do
+      task = create(:task).as_json
+      expect(task).to have_key('comments')
+    end
+  end
 end
