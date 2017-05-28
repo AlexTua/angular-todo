@@ -102,10 +102,13 @@ textarea {
 
 datepicker {
   .form-control {
+    padding: 1px;
     cursor: pointer;
-    max-width: 120px;
+    height: 25px;
+    max-width: 135px;
     display: inline-block;
-    margin: 7px 0px;
+    margin-top: 7px;
+    margin-bottom: 4px;
     &:focus {
       box-shadow: none;
     }
@@ -126,6 +129,7 @@ datepicker {
 }
 
 .deadline {
+  margin-left: 2px;
   display: inline-block;
   cursor: pointer;
   background: #337AB7;
@@ -139,7 +143,6 @@ datepicker {
   font-size: 12px;
   font-weight:bold;
   padding: 3px;
-  margin-left: 10px;
   &:hover {
     background-color: #286090;
   }

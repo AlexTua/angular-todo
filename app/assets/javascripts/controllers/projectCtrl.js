@@ -1,9 +1,8 @@
 angular.module('todoList')
 .controller('ProjectCtrl', [
 '$scope',
-'Auth',
 'projects',
-function($scope, Auth, projects) {
+function($scope, projects) {
   getProjects = function() {
     projects.getAll().then(function(data) {
       $scope.projects = data;

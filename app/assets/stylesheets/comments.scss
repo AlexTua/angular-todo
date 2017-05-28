@@ -25,3 +25,29 @@
     }
   }
 }
+
+.comments-container {
+  font-size: 12px;
+  margin-top: 10px;
+  .glyphicon-trash, .glyphicon-floppy-disk {
+    visibility: hidden;
+    font-size: 12px;
+    padding-left: 4px; 
+    color: rgba(0, 0, 0, .4);
+    cursor: pointer;
+    &:hover {
+      color: black;
+    }
+  }
+  .comment {
+    &:hover {
+      .glyphicon-trash, .glyphicon-floppy-disk {
+        visibility: visible;
+      } 
+    }
+  }
+}
+
+hr {
+  margin: 4px;
+}

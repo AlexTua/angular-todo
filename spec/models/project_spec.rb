@@ -11,5 +11,11 @@ RSpec.describe Project, type: :model do
       project = create(:project).as_json
       expect(project).to have_key('tasks')
     end
+
+    it 'include comments to task as json' do
+      project = create(:project)
+      project.tasks.create(attributes_for(:task))
+      expect(project.as_json["tasks"][0]).to have_key('comments')
+    end
   end
 end

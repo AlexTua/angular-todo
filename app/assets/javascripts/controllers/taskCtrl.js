@@ -1,9 +1,8 @@
 angular.module('todoList')
-.controller('taskCtrl', [
+.controller('TaskCtrl', [
 '$scope',
-'Auth',
 'tasks',
-function($scope, Auth, tasks) { 
+function($scope, tasks) { 
   $scope.createTask = function(scope) {
     tasks.create($scope.taskTitle, scope.project.id).then(function(response) {
       scope.project.tasks.push(response);

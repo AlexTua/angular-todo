@@ -1,9 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe Task, type: :model do
+RSpec.describe Comment, type: :model do
   describe "Associations" do
-    it { should belong_to(:project) }
-    it { should have_many(:comments).dependent(:destroy) } 
+    it { should belong_to(:task) }
   end
 
   describe "Validations" do

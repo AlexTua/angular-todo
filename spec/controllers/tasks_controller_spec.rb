@@ -108,13 +108,14 @@ RSpec.describe TasksController, type: :controller do
   end
 
   describe 'PUT #reorder' do
+    before do 
+      @task1 = project.tasks.create(title: "1")
+      @task2 = project.tasks.create(title: "2")
+      @task3 = project.tasks.create(title: "3")
+    end
+
     context "when direction 'up'" do
-      before do 
-        @task1 = project.tasks.create(title: "1")
-        @task2 = project.tasks.create(title: "2")
-        @task3 = project.tasks.create(title: "3")
-        put :reorder, format: :json, params: { id: @task2.id, direction: "up" } 
-      end
+      before { put :reorder, format: :json, params: { id: @task2.id, direction: "up" } }
 
       it 'responds with success' do
         expect(response).to be_success
@@ -127,13 +128,8 @@ RSpec.describe TasksController, type: :controller do
     end
 
     context "when direction 'down'" do
-      before do 
-        @task1 = project.tasks.create(title: "1")
-        @task2 = project.tasks.create(title: "2")
-        @task3 = project.tasks.create(title: "3")
-        put :reorder, format: :json, params: { id: @task2.id, direction: "down" } 
-      end
-
+      before { put :reorder, format: :json, params: { id: @task2.id, direction: "down" } }
+      
       it 'responds with success' do
         expect(response).to be_success
       end

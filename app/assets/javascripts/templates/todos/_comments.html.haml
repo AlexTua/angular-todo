@@ -1,5 +1,12 @@
-%span.glyphicon.glyphicon-comment{"ng-click": "commentsSwitch = !commentsSwitch"}
-%span{"ng-show": "commentsSwitch"}
-  %form.form-inline
-    %input.form-control.comment-edit{type: "text", "placeholder": "Type here to add comment..."}
-    %span.glyphicon.glyphicon-ok
+%span{"ng-controller": "CommentCtrl"} 
+  %span.glyphicon.glyphicon-comment{"ng-click": "commentsSwitch = !commentsSwitch"}
+  %span{"ng-show": "commentsSwitch"}
+    %div.comments-container
+      %div.comment{"ng-repeat": "comment in task.comments | orderBy: 'created_at'"}
+        {{comment.title}}
+        %span.glyphicon.glyphicon-floppy-disk
+        %span.glyphicon.glyphicon-trash{"ng-click": "deleteComment(this)"}
+        %hr
+      %form.form-inline{"ng-submit": "createComment(this)"}
+        %input.form-control.comment-edit{"ng-model": "commentTitle", type: "text", "placeholder": "Type here to add comment..."}
+        %span.glyphicon.glyphicon-ok{"ng-click": "createComment(this)"}
