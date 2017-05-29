@@ -4,8 +4,12 @@
     %div.comments-container
       %div.comment{"ng-repeat": "comment in task.comments | orderBy: 'created_at'"}
         {{comment.title}}
-        %span.glyphicon.glyphicon-floppy-disk
+        %span.glyphicon.glyphicon-floppy-disk{"ng-click": "fileSwitch = !fileSwitch"}
         %span.glyphicon.glyphicon-trash{"ng-click": "deleteComment(this)"}
+        %p{"ng-show": "comment.attachment.url"}
+          %a{"ng-href": "{{comment.attachment.url}}"} File
+        %span{"ng-show": "fileSwitch"}
+          %input(type="file" nv-file-select uploader="createUploader(this)")
         %hr
       %form.form-inline{"ng-submit": "createComment(this)"}
         %input.form-control.comment-edit{"ng-model": "commentTitle", type: "text", "placeholder": "Type here to add comment..."}

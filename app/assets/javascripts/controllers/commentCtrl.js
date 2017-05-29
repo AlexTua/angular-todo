@@ -1,8 +1,31 @@
 angular.module('todoList')
 .controller('CommentCtrl', [
 '$scope',
+'$window',
 'comments',
-function($scope, comments) {
+'FileUploader',
+function($scope, $window, comments, FileUploader) {
+  var csrf_token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+  $scope.createUploader = function(scope) {
+    scope.uploader = new FileUploader({
+      url: 'comments/' + scope.comment.id + '.json',
+      headers: {'X-CSRF-TOKEN': csrf_token },
+      queueLimit: 1,
+      formData: [{ "id": scope.comment.id }],
+      autoUpload: true,
+      removeAfterUpload: true,
+      method: 'put'
+    });
+
+    scope.uploader.onSuccessItem = function(item, response) {
+      scope.comment.attachment = response;
+      scope.fileSwitch = false;
+    };
+
+    return scope.uploader;
+  }
+
   $scope.createComment = function(scope) {
     comments.create($scope.commentTitle, scope.task.id).then(function(response) {
       scope.task.comments.push(response);
@@ -13,6 +36,7 @@ function($scope, comments) {
   $scope.deleteComment = function(scope) {
     comments.delete(scope.comment.id).then(function() {
       scope.task.comments.splice(scope.task.comments.indexOf(scope.comment), 1)
+      scope.uploader.destroy;
     });
   };
 

@@ -8,5 +8,5 @@ Rails.application.routes.draw do
       put '/reorder' => 'tasks#reorder'
     end
   end
-  resources :comments, only: [:create, :destroy]
+  resources :comments, only: [:create, :destroy, :update]
 end

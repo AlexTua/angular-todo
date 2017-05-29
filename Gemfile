@@ -15,7 +15,8 @@ gem 'devise'
 gem 'haml'
 gem 'cancancan'
 gem 'acts_as_list'
-gem "figaro"
+gem 'figaro'
+gem 'carrierwave'
 
 gem 'rails_12factor', group: :production
 

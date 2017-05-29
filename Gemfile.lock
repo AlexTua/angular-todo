@@ -60,6 +60,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (1.1.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     cliver (0.3.2)
     concurrent-ruby (1.0.5)
     database_cleaner (1.6.1)
@@ -226,6 +230,7 @@ DEPENDENCIES
   angular_rails_csrf
   cancancan
   capybara
+  carrierwave
   database_cleaner
   devise
   factory_girl_rails

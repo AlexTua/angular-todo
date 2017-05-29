@@ -1,5 +1,5 @@
 angular.module('todoList', ['ui.router', 'templates', 'Devise', 'ngFlash', 
-'angular-loading-bar', '720kb.datepicker'])
+'angular-loading-bar', '720kb.datepicker', 'angularFileUpload'])
 .config([
 '$stateProvider',
 '$urlRouterProvider',
