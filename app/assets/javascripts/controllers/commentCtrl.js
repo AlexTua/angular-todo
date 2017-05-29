@@ -18,8 +18,13 @@ function($scope, $window, comments, FileUploader) {
       method: 'put'
     });
 
+    scope.uploader.onAfterAddingFile  = function(item) {
+      scope.item = item;
+    };
+
     scope.uploader.onSuccessItem = function(item, response) {
       scope.comment.attachment = response;
+      scope.item = "";
       scope.fileSwitch = false;
     };
 

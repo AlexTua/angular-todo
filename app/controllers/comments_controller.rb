@@ -12,8 +12,11 @@ class CommentsController < ApplicationController
 
   def update
     @comment.attachment = params[:file]
-    @comment.save
-    render json: @comment.attachment
+    if @comment.save
+      render json: @comment.attachment
+    else
+      render(status: 422, json: @comment.errors.full_messages)
+    end
   end
 
   def destroy
