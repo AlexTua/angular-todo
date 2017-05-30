@@ -1,8 +1,10 @@
 $icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
 @import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
 @import "bootstrap-sass/assets/stylesheets/bootstrap";
+@import "bootstrap-social/bootstrap-social.scss";
 @import "angularjs-datepicker/dist/angular-datepicker";
 @import "angular-loading-bar/build/loading-bar";
+@import "font-awesome";
 @import "auth";
 @import "home";
 @import "todo";

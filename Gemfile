@@ -12,11 +12,14 @@ gem 'angular_rails_csrf'
 gem 'angular-rails-templates'
 gem 'responders'
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'haml'
 gem 'cancancan'
 gem 'acts_as_list'
 gem 'figaro'
 gem 'carrierwave'
+gem 'font-awesome-rails'
 
 gem 'rails_12factor', group: :production
 
