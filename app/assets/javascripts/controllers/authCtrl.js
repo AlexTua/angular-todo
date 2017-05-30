@@ -23,8 +23,12 @@ function($scope, $state, $location, Auth, Flash){
   $scope.register = function() {
     Auth.register($scope.user).then(function(){
       $location.path('/');
-    }, function(){
-      Flash.create('danger', "Wrong input", 3000, {class: 'auth'}, true);
+    }, function(response){
+      msg = "Password" + response.data.errors.password;
+      if (response.data.errors.email) {
+        msg = "Email " + response.data.errors.email;
+      } 
+      Flash.create('danger', msg, 3000, {class: 'auth'}, true);
     });
   };
 }]);

@@ -7,7 +7,7 @@ RSpec.describe Ability, type: :model do
   let(:task) { create(:task, project: project) }
   let(:comment) { create(:comment, task: task) }
 
-  context "when user has access" do
+  context 'when user has access' do
     it { should be_able_to(:manage, project) }
     it { should be_able_to(:manage, task) }
     it { should be_able_to(:manage, comment) }

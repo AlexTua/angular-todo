@@ -14,7 +14,7 @@ RSpec.describe ProjectsController, type: :controller do
       end
 
       it 'responds with json' do
-        expect(response.content_type).to eq("application/json")
+        expect(response.content_type).to eq('application/json')
       end
 
       it 'assigns the requested projects to @projects' do
@@ -39,24 +39,24 @@ RSpec.describe ProjectsController, type: :controller do
     end
 
     it 'responds with json' do
-      expect(response.content_type).to eq("application/json")
+      expect(response.content_type).to eq('application/json')
     end
-    
+
     it 'creates new project' do
-      expect{
+      expect do
         post :create, format: :json
-      }.to change(Project, :count).by(1)
+      end.to change(Project, :count).by(1)
     end
   end
 
   describe 'PUT #update' do
     let(:project) { create(:project, user: user) }
-    before { put :update, format: :json, params: { id: project.id, title: "Test" } }
+    before { put :update, format: :json, params: { id: project.id, title: 'Test' } }
 
     it 'responds with success' do
       expect(response).to be_success
     end
-    
+
     it 'change project title' do
       project.reload
       expect(project.title).to eq('Test')
@@ -64,7 +64,7 @@ RSpec.describe ProjectsController, type: :controller do
 
     it "doesn't change wrong project" do
       project = create(:project)
-      put :update, format: :json, params: { id: project.id, title: "Test" }
+      put :update, format: :json, params: { id: project.id, title: 'Test' }
       project.reload
       expect(project.title).not_to eq('Test')
     end
@@ -77,11 +77,11 @@ RSpec.describe ProjectsController, type: :controller do
       delete :destroy, format: :json, params: { id: @project.id }
       expect(response).to be_success
     end
-    
+
     it 'delete project' do
-      expect {
+      expect do
         delete :destroy, format: :json, params: { id: @project.id }
-      }.to change(Project, :count).by(-1)
+      end.to change(Project, :count).by(-1)
     end
 
     it "doesn't delete wrong project" do

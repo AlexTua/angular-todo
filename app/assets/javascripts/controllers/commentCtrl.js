@@ -4,7 +4,8 @@ angular.module('todoList')
 '$window',
 'comments',
 'FileUploader',
-function($scope, $window, comments, FileUploader) {
+'Flash',
+function($scope, $window, comments, FileUploader, Flash) {
   var csrf_token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
   $scope.createUploader = function(scope) {
@@ -20,6 +21,10 @@ function($scope, $window, comments, FileUploader) {
 
     scope.uploader.onAfterAddingFile  = function(item) {
       scope.item = item;
+    };
+
+    scope.uploader.onErrorItem  = function(item, response) {
+       Flash.create('danger', response.file, 3000, {}, true);
     };
 
     scope.uploader.onSuccessItem = function(item, response) {

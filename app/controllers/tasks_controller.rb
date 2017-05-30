@@ -28,7 +28,7 @@ class TasksController < ApplicationController
     respond_with reorder_task(params[:direction])
   end
 
-  private 
+  private
 
   def task_params
     params.require(:task).permit(:title, :project_id, :done, :deadline)
