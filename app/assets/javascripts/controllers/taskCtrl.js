@@ -30,6 +30,12 @@ function($scope, tasks) {
 
   $scope.deleteTask = function(scope) {
     tasks.delete(scope.task.id).then(function() {
+      var arr = scope.project.tasks;
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i].position > scope.task.position) {
+          arr[i].position -= 1;
+        }
+      }
       scope.project.tasks.splice(scope.project.tasks.indexOf(scope.task), 1);
     });
   };
