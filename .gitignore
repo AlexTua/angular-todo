@@ -15,8 +15,10 @@
 
 # Ignore Byebug command history file.
 .byebug_history
-.env
-Procfile
 
 # Ignore application configuration
 /config/application.yml
+
+.env
+Procfile
+/vendor/assets/bower_components

@@ -18,9 +18,9 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.0.3'
 gem 'responders'
-gem 'rubocop', '~> 0.47.1', require: false
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
+gem 'rubocop', '~> 0.47.1', require: false
 
 gem 'rails_12factor', group: :production
 
@@ -33,10 +33,12 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'ffaker'
-  gem 'phantomjs', require: 'phantomjs/poltergeist'
   gem 'poltergeist'
+  gem 'phantomjs', require: 'phantomjs/poltergeist'
+  gem 'launchy'
   gem 'rails-controller-testing'
   gem 'shoulda-matchers'
+  gem 'capybara-angular'
 end
 
 group :development do
