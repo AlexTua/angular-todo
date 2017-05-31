@@ -81,7 +81,7 @@ RSpec.describe TasksController, type: :controller do
 
       it "doesn't change task title" do
         task.reload
-        expect(task.title).to eq('MyString')
+        expect(task.title).to eq('My task')
       end
     end
   end
