@@ -14,5 +14,5 @@
           %span{"ng-show": "item.isUploading"} Uploading...
         %hr
       %form.form-inline{"ng-submit": "createComment(this)"}
-        %input.form-control.comment-edit{"ng-model": "commentTitle", type: "text", "placeholder": "Type here to add comment..."}
+        %input.form-control.comment-edit{"ng-model": "commentTitle", type: "text", "placeholder": "Type here to add comment...", required: true}
         %span.glyphicon.glyphicon-ok{"ng-click": "createComment(this)"}

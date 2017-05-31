@@ -15,7 +15,7 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Devise::Test::ControllerHelpers, type: :controller
-  config.include Capybara::Angular::DSL
+  config.include Warden::Test::Helpers
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
 end

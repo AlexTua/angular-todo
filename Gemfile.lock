@@ -61,8 +61,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    capybara-angular (0.2.5)
-      capybara (>= 2.5.0)
     carrierwave (1.1.0)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
@@ -269,7 +267,6 @@ DEPENDENCIES
   angular_rails_csrf
   cancancan
   capybara
-  capybara-angular
   carrierwave
   database_cleaner
   devise

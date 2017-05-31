@@ -3,7 +3,7 @@ FactoryGirl.define do
     project nil
     done false
     deadline '2017-05-23'
-    title 'MyString'
+    title 'My task'
     position 1
   end
 end
