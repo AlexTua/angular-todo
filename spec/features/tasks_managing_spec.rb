@@ -24,7 +24,6 @@ feature 'tasks managing', js: true do
           .set ' '
       click_button 'Add Task'
     
-      expect(page).to have_content @project.title
       expect(page).to have_content "Title can't be blank"
     end
   end
