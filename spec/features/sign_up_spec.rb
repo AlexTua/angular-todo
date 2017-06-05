@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Sign up', js: true do
   given(:user) { build(:user) }
   background { visit '#!/signup' }
-  
+
   scenario 'sign up with valid data' do
     fill_in 'email', with: user.email
     fill_in 'password', with: user.password
@@ -14,15 +14,15 @@ feature 'Sign up', js: true do
   end
 
   scenario 'when invalid data' do
-    fill_in 'email', with: "qwe@qwe"
-    fill_in 'password', with: "123"
+    fill_in 'email', with: 'qwe@qwe'
+    fill_in 'password', with: '123'
     click_button 'Sign up'
 
     expect(page).to have_content 'Passwordis too short (minimum is 6 characters)'
 
     user = create(:user)
     fill_in 'email', with: user.email
-    fill_in 'password', with: "123qwe"
+    fill_in 'password', with: '123qwe'
     click_button 'Sign up'
 
     expect(page).to have_content 'Email has already been taken'

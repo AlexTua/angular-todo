@@ -3,13 +3,9 @@ angular.module('todoList')
 '$scope',
 'projects',
 function($scope, projects) {
-  getProjects = function() {
-    projects.getAll().then(function(data) {
-      $scope.projects = data;
-    });
-  };
-
-  getProjects();
+  projects.getAll().then(function(data) {
+    $scope.projects = data;
+  });
   
   $scope.createProject = function() {
     projects.create().then(function(response) {

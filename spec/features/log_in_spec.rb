@@ -14,8 +14,8 @@ feature 'Log in', js: true do
   end
 
   scenario 'when invalid data' do
-    fill_in 'email', with: "qwe@qwe"
-    fill_in 'password', with: "123"
+    fill_in 'email', with: 'qwe@qwe'
+    fill_in 'password', with: '123'
     click_button 'Log in'
 
     expect(page).to have_content 'Invalid Email or password.'

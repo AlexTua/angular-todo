@@ -1,10 +1,11 @@
 angular.module('todoList')
 .controller('TaskCtrl', [
 '$scope',
+'$filter',
 'tasks',
-function($scope, tasks) { 
+function($scope, $filter, tasks) { 
   $scope.createTask = function(scope) {
-    tasks.create($scope.taskTitle, scope.project.id).then(function(response) {
+    tasks.create(scope.taskTitle, scope.project.id).then(function(response) {
       scope.project.tasks.push(response);
       scope.taskTitle = "";
     });
@@ -61,7 +62,7 @@ function($scope, tasks) {
   };
 
   $scope.pickDate = function(scope) {
-    scope.date= scope.task.deadline;
+    scope.date = $filter('date')(scope.task.deadline, "mediumDate");
     scope.dateSwitch = !scope.dateSwitch;
   };
 }]);

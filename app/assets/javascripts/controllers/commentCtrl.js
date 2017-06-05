@@ -37,7 +37,7 @@ function($scope, $window, comments, FileUploader, Flash) {
   }
 
   $scope.createComment = function(scope) {
-    comments.create($scope.commentTitle, scope.task.id).then(function(response) {
+    comments.create(scope.commentTitle, scope.task.id).then(function(response) {
       scope.task.comments.push(response);
       scope.commentTitle = "";
     });

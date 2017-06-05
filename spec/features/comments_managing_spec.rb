@@ -1,17 +1,17 @@
 require 'rails_helper'
 
 feature 'comments managing', js: true do
-  given!(:user) { create(:user) }
-  
+  given(:user) { create(:user) }
+
   background do
     login_as(user, scope: :user)
     @project = create(:project, user: user)
     @task = create(:task, project: @project)
     @comment = create(:comment, task: @task)
-    visit '/' 
+    visit '/'
   end
 
-  context "adding comments" do
+  context 'adding comments' do
     scenario 'when valid title' do
       find('.task-container').hover
       find('.glyphicon-comment').click
@@ -33,16 +33,16 @@ feature 'comments managing', js: true do
 
       expect(page).to have_content "Title can't be blank"
     end
+  end
 
-    scenario 'remove task' do
-      find('.task-container').hover
-      find('.glyphicon-comment').click
-      find('.comment').hover
-      within '.comment' do
-        page.find('.glyphicon-trash').click
-      end
-      
-      expect(page).not_to have_content @comment.title
+  scenario 'remove task' do
+    find('.task-container').hover
+    find('.glyphicon-comment').click
+    find('.comment').hover
+    within '.comment' do
+      page.find('.glyphicon-trash').click
     end
+
+    expect(page).not_to have_content @comment.title
   end
 end
