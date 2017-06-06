@@ -22,3 +22,4 @@
 .env
 Procfile
 /vendor/assets/bower_components
+/public/uploads/
